@@ -14,12 +14,18 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    c = 0
-    while c < len(text):
-        print(text[c], end="")
-        if text[c] in ".?:":
-            print("\n")
-            if c + 1 < len(text):
-                while c + 1 < len(text) and text[c + 1] == ' ':
-                    c += 1
-        c += 1
+    text = text.strip()
+    
+    i = 0
+    while i < len(text):
+        if i == 0 and text[i] == ' ':
+            i += 1
+            continue
+            
+        print(text[i], end="")
+        
+        if text[i] in ".?:":
+            print("\n\n", end="")
+            while (i + 1) < len(text) and text[i + 1] == " ":
+                i += 1
+        i += 1

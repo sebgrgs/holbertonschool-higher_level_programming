@@ -36,7 +36,7 @@ Test consecutive delimiters:
 
 Test spaces:
     >>> text_indentation("   Hello   ")
-       Hello   
+    Hello
 
 Test no special characters:
     >>> text_indentation("Hello")
@@ -81,3 +81,4 @@ Test multiple spaces between words and delimiters:
     Hello    world.
     <BLANKLINE>
     New    line
+
