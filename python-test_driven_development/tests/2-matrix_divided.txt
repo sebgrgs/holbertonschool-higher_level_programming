@@ -1,0 +1,23 @@
+The ``2-matrix_divided`` module
+==============================
+
+Using ``matrix_divided`` 
+----------------------
+
+Import function from module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test basic division:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test one element matrix:
+    >>> matrix = [[2]]
+    >>> matrix_divided(matrix, 2)
+    [[1.0]]
+
+Test very large numbers:
+    >>> matrix = [[1000000, 2000000], [3000000, 4000000]]
+    >>> matrix_divided(matrix, 1000000)
+    [[1.0, 2.0], [3.0, 4.0]]
