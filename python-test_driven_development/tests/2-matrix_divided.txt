@@ -21,3 +21,26 @@ Test very large numbers:
     >>> matrix = [[1000000, 2000000], [3000000, 4000000]]
     >>> matrix_divided(matrix, 1000000)
     [[1.0, 2.0], [3.0, 4.0]]
+
+Test floating point numbers:
+	>>> matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]]
+	>>> matrix_divided(matrix, 3)
+	[[0.5, 0.83, 1.17], [1.5, 1.83, 2.17]]
+
+Test missing arguments:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test too many arguments:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3, 4)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+Test invalid matrix:
+	>>> matrix = [[1, 2, 3], [4, 5]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
