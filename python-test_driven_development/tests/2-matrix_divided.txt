@@ -62,3 +62,43 @@ Test invalid matrix type:
 	>>> matrix_divided(matrix, "School")
 	Traceback (most recent call last):
 	TypeError: div must be a number
+
+Test floating point numbers:
+    >>> matrix = [[1.5, 2.8, 3.2], [4.1, 5.6, 6.9]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.75, 1.4, 1.6], [2.05, 2.8, 3.45]]
+
+Test large numbers:
+    >>> matrix = [[1000, 2000, 3000], [4000, 5000, 6000]]
+    >>> print(matrix_divided(matrix, 1000))
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Test negative numbers:
+    >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
+    >>> print(matrix_divided(matrix, 2))
+    [[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+
+Test mix of integers and floats:
+    >>> matrix = [[1, 2.5, 3], [4.8, 5, 6.7]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.25, 1.5], [2.4, 2.5, 3.35]]
+
+Test small divisor:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 0.1))
+    [[10.0, 20.0, 30.0], [40.0, 50.0, 60.0]]
+
+Test None as matrix:
+    >>> print(matrix_divided(None, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test one-row matrix:
+    >>> matrix = [[1, 2, 3]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5]]
+
+Test one-column matrix:
+    >>> matrix = [[1], [2], [3]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5], [1.0], [1.5]]
