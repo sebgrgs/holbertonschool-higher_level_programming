@@ -30,6 +30,10 @@ Test types:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
+	>>> add_integer("Hello", "School")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
 Test floating point numbers:
     >>> add_integer(2.5, 3.7)
     5
@@ -48,3 +52,18 @@ Test missing arguments:
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test too many arguments:
+	>>> add_integer(1, 2, 3)
+	Traceback (most recent call last):
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test with float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Test with float NaN:
+    >>> add_integer(float('nan'), 0)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
