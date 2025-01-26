@@ -102,3 +102,29 @@ Test one-column matrix:
     >>> matrix = [[1], [2], [3]]
     >>> print(matrix_divided(matrix, 2))
     [[0.5], [1.0], [1.5]]
+
+Test matrix with NaN:
+    >>> matrix = [[float('nan'), 2], [3, 4]]
+    >>> result = matrix_divided(matrix, 2)
+    >>> for row in result:
+    ...     for item in row:
+    ...         if item != item:  # Check for NaN
+    ...             print("NaN", end=" ")
+    ...         else:
+    ...             print(item, end=" ")
+    NaN 1.0 1.5 2.0 
+
+Test matrix with infinity:
+    >>> matrix = [[float('inf'), 2], [3, 4]]
+    >>> matrix_divided(matrix, 2)
+    [[inf, 1.0], [1.5, 2.0]]
+
+Test matrix with negative infinity:
+	>>> matrix = [[float('-inf'), 2], [3, 4]]
+	>>> matrix_divided(matrix, 2)
+	[[-inf, 1.0], [1.5, 2.0]]
+
+Test division by infinity:
+	>>> matrix = [[1, 2], [3, 4]]
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0], [0.0, 0.0]]
