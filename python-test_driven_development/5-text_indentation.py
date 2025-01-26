@@ -7,12 +7,13 @@ of these characters: ., ? and :
 
 def text_indentation(text):
     """
-    This function prints a text with 2 new lines after each of these characters:
+    This function prints a text with 2 new lines after each of
+    these characters:
     ., ? and :
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    
+
     c = 0
     while c < len(text):
         print(text[c], end="")
