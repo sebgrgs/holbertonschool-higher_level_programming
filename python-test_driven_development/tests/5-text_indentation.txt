@@ -65,3 +65,19 @@ Test multiple spaces between words:
     Hello    world.
     <BLANKLINE>
     New    line
+
+Test multiple spaces between delimiters:
+    >>> text_indentation("Hello.    World.    New.    Line")
+    Hello.
+    <BLANKLINE>
+    World.
+    <BLANKLINE>
+    New.
+    <BLANKLINE>
+    Line
+
+Test multiple spaces between words and delimiters:
+    >>> text_indentation("Hello    world.    New    line")
+    Hello    world.
+    <BLANKLINE>
+    New    line
