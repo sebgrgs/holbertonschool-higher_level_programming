@@ -3,9 +3,9 @@
 
 
 class Rectangle:
+    """Class that defines a rectangle"""
     number_of_instances = 0
 
-    """Class that defines a rectangle"""
     def __init__(self, width=0, height=0):
         """Initialize rectangle with given width and height"""
         Rectangle.number_of_instances += 1
