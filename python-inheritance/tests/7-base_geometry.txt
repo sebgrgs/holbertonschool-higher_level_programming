@@ -51,6 +51,15 @@ Test integer validator with invalid values:
     Traceback (most recent call last):
     ValueError: distance must be greater than 0
 
+Test integer validator with missing arguments:
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
 Test integer validator with float:
     >>> bg.integer_validator("age", 7.8)
     Traceback (most recent call last):
