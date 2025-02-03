@@ -43,6 +43,10 @@ Test integer validator with invalid types:
     Traceback (most recent call last):
     TypeError: age must be an integer
 
+	>>> bg.integer_validator("age", (4,))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
 Test integer validator with invalid values:
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
