@@ -20,6 +20,7 @@ Test area method:
 Test integer validator with valid integers:
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
+	>>> bg.integer_validator("Big", 98312938229138129321983812392813921839138219381293183921381938293812938192183912389123821938219312)
 
 Test integer validator with invalid types:
     >>> bg.integer_validator("name", "John")
@@ -37,14 +38,10 @@ Test integer validator with invalid types:
     >>> bg.integer_validator("age", [3])
     Traceback (most recent call last):
     TypeError: age must be an integer
-
+    
     >>> bg.integer_validator("age", {3, 4})
     Traceback (most recent call last):
     TypeError: age must be an integer
-
-	>>> bg.integer_validator("NaN", float('nan'))
-	Traceback (most recent call last):
-	ValueError: NaN must be an integer
 
 Test integer validator with invalid values:
     >>> bg.integer_validator("age", 0)
