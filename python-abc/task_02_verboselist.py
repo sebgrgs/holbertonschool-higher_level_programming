@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+""" VerboseList class """
 from abc import ABC, abstractmethod
 
 
@@ -22,5 +22,6 @@ class VerboseList(list):
 
     def pop(self, index=-1):
         """ Pop method """
-        print("Popped [{}] from the list.".format(self[index]))
-        super().pop(index)
+        item = super().pop(index)
+        print("Popped [{}] from the list.".format(item))
+        return item

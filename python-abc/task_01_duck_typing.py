@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" Duck typing example """
 
 from abc import ABC, abstractmethod
 
