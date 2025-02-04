@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """ VerboseList class """
-from abc import ABC, abstractmethod
 
 
 class VerboseList(list):
