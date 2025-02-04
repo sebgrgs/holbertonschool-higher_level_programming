@@ -3,6 +3,7 @@
 
 
 class Fish:
+    """ Fish class """
     def swim(self):
         """ Fish swim method """
         print("The fish is swimming")
@@ -13,6 +14,7 @@ class Fish:
 
 
 class Bird:
+    """ Bird class """
     def fly(self):
         """ Bird fly method """
         print("The bird is flying")
@@ -23,6 +25,7 @@ class Bird:
 
 
 class FlyingFish(Fish, Bird):
+    """ FlyingFish class """
     def fly(self):
         """ FlyingFish fly method """
         print("The flying fish is soaring!")
