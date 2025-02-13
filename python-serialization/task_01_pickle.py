@@ -19,11 +19,17 @@ class CustomObject:
 
     def serialize(self, filename):
         """Serialize the object to a file"""
-        with open(filename, "wb") as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, "wb") as file:
+                pickle.dump(self, file)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
         """Deserialize the object from a file"""
-        with open(filename, "rb") as file:
-            return pickle.load(file)
+        try:
+            with open(filename, "rb") as file:
+                return pickle.load(file)
+        except Exception:
+            return None
