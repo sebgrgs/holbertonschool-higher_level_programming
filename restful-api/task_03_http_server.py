@@ -4,7 +4,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 
 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+class SimpleHTTP(BaseHTTPRequestHandler):
     """Simple HTTP Server to handle GET requests"""
     def do_GET(self):
         """Handle GET requests"""
@@ -35,7 +35,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Endpoint not found")
 
 
-if __name__ == '__main__':
-    server = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
-    print('Starting server, use <Ctrl-C> to stop')
-    server.serve_forever()
+def run(server_class=HTTPServer, handler_class=SimpleHTTP, port=8000):
+    """Start the server."""
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f"Starting server on port {port}...")
+    httpd.serve_forever()
+
+
+if __name__ == "__main__":
+    run()
