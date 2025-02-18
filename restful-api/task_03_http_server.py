@@ -17,7 +17,7 @@ class SimpleHTTP(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            data = {'name': 'John', 'age': '30', 'city': 'New York'}
+            data = {'name': 'John', 'age': 30, 'city': 'New York'}
             self.wfile.write(json.dumps(data).encode())
         elif self.path == '/status':
             self.send_response(200)
