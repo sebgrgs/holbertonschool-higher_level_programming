@@ -27,15 +27,15 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Ok")
+            self.wfile.write(b"OK")
         else:
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Endpoint Not Found")
+            self.wfile.write(b"Endpoint not found")
 
 
 if __name__ == '__main__':
-    server = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+    server = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
     print('Starting server, use <Ctrl-C> to stop')
     server.serve_forever()
