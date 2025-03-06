@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Module to list all states from a database """
+"""
+Module to list all states from a database
+"""
 import sys
 import MySQLdb
 
@@ -14,7 +16,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states "
                    "WHERE name LIKE 'N%' "
-                   "ORDER BY states.id ASC")
+                   "ORDER BY `id` ASC")
     rows = cursor.fetchall()
 
     for row in rows:

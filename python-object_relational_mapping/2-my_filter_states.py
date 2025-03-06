@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Module to list all states from a database """
+"""
+Module to list all states from a database 
+"""
 import sys
 import MySQLdb
 
@@ -12,8 +14,8 @@ if __name__ == "__main__":
         port=3306
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' " \
-            "ORDER BY states.id ASC".format(sys.argv[4])
+    query = "SELECT * FROM states WHERE name = '{}'" \
+            "ORDER BY `id` ASC".format(sys.argv[4])
     cursor.execute(query)
     rows = cursor.fetchall()
 
