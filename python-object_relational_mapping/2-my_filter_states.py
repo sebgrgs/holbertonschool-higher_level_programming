@@ -16,9 +16,10 @@ if __name__ == "__main__":
         port=3306
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states \
-                   WHERE name = '{}' \
-                   ORDER BY `id` ASC;".format(state))
+    cursor.execute(
+        "SELECT * FROM states WHERE CONVERT(name USING Latin1) \
+        COLLATE Latin1_General_CS = '{}' \
+        ORDER BY states.id;".format(sys.argv[4],))
     rows = cursor.fetchall()
 
     for row in rows:
